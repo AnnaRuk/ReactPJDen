@@ -6,6 +6,8 @@ import Layout from '../Layout/Layout';
 import Home from '../Home/Home';
 import Shop from '../Shop/Shop';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import Users from '../Users/Users';
+import UserPage from '../UserPage/UserPage';
 
 
 function App(): JSX.Element {
@@ -17,6 +19,8 @@ function App(): JSX.Element {
       {/* <Route path='products'element={<Shop/>}/> */}
       <Route path='products/:productId' element={<Shop/>}/>
       <Route path='products' element={<Shop/>}/>
+      <Route path='users' element={<Users/>}/>
+      <Route path='users/:userId' element={<UserPage/>}/>
       <Route path='*'element={<ErrorPage/>}/>
  
       

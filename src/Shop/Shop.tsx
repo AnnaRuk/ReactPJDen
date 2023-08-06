@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ProductPage from '../ProductPage/ProductPage';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 interface Product{
@@ -42,13 +42,17 @@ export default function Shop():JSX.Element {
   useEffect(()=>{getProducts()},[])
 
 
+  const urlShort:string = "http://localhost:3000/products/"
+
+
 function productHandler(){
   const{products}=arrayProducts;
+
   return products.map((product)=>(
    <li className='product'>
-      <span className='product'>ID {product.id},</span>
-      <span className='product'>TITLE: {product.title}</span>
-      <span className='product'>PRICE: {product.price}</span>
+      <span className='product'>{product.id}. </span>
+      <span className='product'>  {product.title}</span>
+      <Link to={urlShort+product.id} style={{marginLeft:"20px"}}> Show users information</Link>
    </li>
   )
   )
